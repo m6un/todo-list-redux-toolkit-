@@ -1,14 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import TodoItem from './TodoItem';
 
+//We use the useSelector hook here, inorder to obtain data from the store and assign it to a variable. The argument will be the whole state that is managed in 
+//the store so you'll have to specify what to return
+
+
 const TodoList = () => {
-	const todos = [
-		{ id: 1, title: 'todo1', completed: false },
-		{ id: 2, title: 'todo2', completed: false },
-		{ id: 3, title: 'todo3', completed: true },
-		{ id: 4, title: 'todo4', completed: false },
-		{ id: 5, title: 'todo5', completed: false },
-	];
+	const todos = useSelector((state)=> state.todos)
 
 	return (
 		<ul className='list-group'>
